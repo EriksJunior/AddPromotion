@@ -1,5 +1,5 @@
 <template>
-  <h1 style="padding: 0; margin: 0" class="text-sky-400">
+  <h1 style="padding: 0; margin: 0; color: #ffd700">
     Aqui é a home dsfsdflhdsfhsdf
   </h1>
 </template>
@@ -9,4 +9,5 @@ import { defineComponent } from "vue";
 export default defineComponent({});
 </script>
 
-<style></style>
+<style>
+</style>
