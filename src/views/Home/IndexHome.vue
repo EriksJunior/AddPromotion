@@ -1,5 +1,5 @@
 <template>
-  <h1 style="padding: 0; margin: 0; color: #ffd700">
+  <h1 style="padding: 0; margin: 0; font-size: 50px; color: #ffd700">
     Aqui é a home dsfsdflhdsfhsdf
   </h1>
 </template>
