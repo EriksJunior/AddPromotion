@@ -20,6 +20,6 @@ body,
   height: 100%;
   padding: 0;
   margin: 0;
-  background-color: rgb(24, 24, 24);
+  background-color: rgb(6, 11, 17);
 }
 </style>
