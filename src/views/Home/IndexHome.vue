@@ -18,12 +18,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref } from "vue";
+import { defineComponent, ref } from "vue";
 import Publication from "../../types/publication";
 
 export default defineComponent({
   setup() {
-    const publication = ref<Publication[]>([]);
+    const publication = ref<Publication>({
+      uuid: "",
+      idEnterprise: "",
+      description: "",
+      img: "",
+      originalValue: 0,
+      promotionalValue: 0,
+      discountPercentage: "",
+      gain: 0,
+    });
+
+    const b = publication;
 
     return {
       publication,
