@@ -4,13 +4,44 @@
     style="padding: 0; margin: 0; font-size: 50px; width: 100%"
   >
     <div class="w-10/12" style="border: solid 1px red">
-      <div class="flex justify-center space-x-40 my-5 mt-5 text-ellipsis">
-        <div class="text-white">
-          <p>Aqui é a home {{ publication.description }}</p>
+      <div
+        class="my-5 mt-5 text-ellipsis grid grid-cols-3 gap-3"
+        style="height: 95%"
+      >
+        <div class="border-2 flex justify-center items-center">
+          <div>
+            <PlusIcon class="border-2 cursor-pointer h-40 text-yellow-400" />
+          </div>
         </div>
 
-        <div class="text-black">
-          <input type="text" v-model="publication.description" />
+        <div class="border-2 flex justify-center items-center">
+          <div>
+            <PlusIcon class="border-2 cursor-pointer h-40 text-yellow-400" />
+          </div>
+        </div>
+
+        <div class="border-2 flex justify-center items-center">
+          <div>
+            <PlusIcon class="border-2 cursor-pointer h-40 text-yellow-400" />
+          </div>
+        </div>
+
+        <div class="border-2 flex justify-center items-center">
+          <div>
+            <PlusIcon class="border-2 cursor-pointer h-40 text-yellow-400" />
+          </div>
+        </div>
+
+        <div class="border-2 flex justify-center items-center">
+          <div>
+            <PlusIcon class="border-2 cursor-pointer h-40 text-yellow-400" />
+          </div>
+        </div>
+
+        <div class="border-2 flex justify-center items-center">
+          <div>
+            <PlusIcon class="border-2 cursor-pointer h-40 text-yellow-400" />
+          </div>
         </div>
       </div>
     </div>
@@ -20,6 +51,7 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import Publication from "../../types/publication";
+import { PlusIcon } from "@heroicons/vue/solid";
 
 export default defineComponent({
   setup() {
@@ -34,11 +66,12 @@ export default defineComponent({
       gain: 0,
     });
 
-    const b = publication;
-
     return {
       publication,
     };
+  },
+  components: {
+    PlusIcon,
   },
 });
 </script>
