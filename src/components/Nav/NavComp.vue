@@ -24,7 +24,7 @@ export default defineComponent({
   height: 100%;
   border-top-right-radius: 40%;
   border-bottom-right-radius: 40%;
-  color: #ffd700;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
