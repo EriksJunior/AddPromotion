@@ -7,49 +7,20 @@
       <div
         class="my-5 mt-5 text-ellipsis grid grid-cols-3 gap-3"
         style="height: 95%"
+        ref="containerGeneral"
       >
-        <div class="border-2 flex justify-center items-center">
+        <!-- <div class="border-2 flex justify-center items-center w-9/12">
           <div>
             <PlusIcon class="border-2 cursor-pointer h-40 text-yellow-400" />
           </div>
-        </div>
-
-        <div class="border-2 flex justify-center items-center">
-          <div>
-            <PlusIcon class="border-2 cursor-pointer h-40 text-yellow-400" />
-          </div>
-        </div>
-
-        <div class="border-2 flex justify-center items-center">
-          <div>
-            <PlusIcon class="border-2 cursor-pointer h-40 text-yellow-400" />
-          </div>
-        </div>
-
-        <div class="border-2 flex justify-center items-center">
-          <div>
-            <PlusIcon class="border-2 cursor-pointer h-40 text-yellow-400" />
-          </div>
-        </div>
-
-        <div class="border-2 flex justify-center items-center">
-          <div>
-            <PlusIcon class="border-2 cursor-pointer h-40 text-yellow-400" />
-          </div>
-        </div>
-
-        <div class="border-2 flex justify-center items-center">
-          <div>
-            <PlusIcon class="border-2 cursor-pointer h-40 text-yellow-400" />
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, HtmlHTMLAttributes, ref, onMounted } from "vue";
 import Publication from "../../types/publication";
 import { PlusIcon } from "@heroicons/vue/solid";
 
@@ -65,9 +36,19 @@ export default defineComponent({
       discountPercentage: "",
       gain: 0,
     });
+    const containerGeneral = ref<HtmlHTMLAttributes>();
+
+    function addNewDiv() {
+      console.log(containerGeneral.value);
+    }
+
+    onMounted(() => {
+      addNewDiv();
+    });
 
     return {
       publication,
+      containerGeneral,
     };
   },
   components: {
@@ -77,4 +58,7 @@ export default defineComponent({
 </script>
 
 <style>
+.cardPromotion{
+  
+}
 </style>
