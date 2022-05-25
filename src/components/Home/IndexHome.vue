@@ -34,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, h } from "vue";
 import Publication from "../../types/publication";
 import { PlusIcon } from "@heroicons/vue/solid";
 
@@ -52,13 +52,21 @@ export default defineComponent({
     });
 
     function addNewDiv() {
-      let value: string = "1";
-      const divContainerGeneral: any =
-        document.getElementById("containerGeneral");
-      const newDiv: any = document.createElement("div");
+      let value: number = 1;
+      const divContainerGeneral = document.getElementById("containerGeneral");
+      const newDiv = document.createElement("div");
 
       newDiv.className = "cardPromotion";
       divContainerGeneral?.appendChild(newDiv);
+
+      const newDivImg = document.createElement("div");
+      newDiv.appendChild(newDivImg);
+      newDivImg.className = "imgItem";
+
+      const newDivDescription = document.createElement("div");
+      newDiv.appendChild(newDivDescription);
+      newDivDescription.className = "descriptionItem";
+      newDivDescription.textContent = "testeeeeee";
     }
 
     return {
@@ -80,7 +88,6 @@ export default defineComponent({
   flex-direction: column;
   width: 100%;
   height: 55vh;
-  border: solid 1px red;
 }
 
 .imgItem {
