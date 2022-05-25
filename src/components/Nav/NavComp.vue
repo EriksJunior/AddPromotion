@@ -11,6 +11,20 @@ import { defineComponent } from "vue";
 import { PlusIcon } from "@heroicons/vue/solid";
 
 export default defineComponent({
+  setup(props: any, { emit }) {
+    const addNewCard = () => {
+      emit("newCard", true);
+    };
+
+    const removeCard = () => {
+      emit("removeCard", true);
+    };
+
+    return {
+      addNewCard,
+      removeCard,
+    };
+  },
   components: {
     PlusIcon,
   },
@@ -22,6 +36,7 @@ export default defineComponent({
   background-color: black;
   width: 6%;
   height: 100%;
+  max-height: auto;
   border-top-right-radius: 40%;
   border-bottom-right-radius: 40%;
   color: white;
