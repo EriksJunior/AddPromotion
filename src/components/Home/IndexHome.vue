@@ -45,7 +45,7 @@ export default defineComponent({
     const arrayTeste = reactive<Array<object>>([]);
 
     function addNewDiv() {
-      arrayTeste.push({ teste: "ovo" });
+      arrayTeste.push({ teste: "teste" });
     }
 
     return {
