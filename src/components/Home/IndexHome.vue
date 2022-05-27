@@ -8,10 +8,10 @@
         id="containerGeneral"
         class="my-5 mt-3 text-ellipsis grid grid-cols-4 gap-5"
         ref="containerGeneral"
-        v-for="item in publication"
-        :key="item.uuid"
       >
-        <CardItem />
+        <div v-for="item in arrayTeste" :key="item">
+          <CardItem />
+        </div>
       </div>
       <button
         style="background-color: white; border-radius: 10px; width: 200px"
@@ -24,7 +24,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, h } from "vue";
+import { defineComponent, ref, reactive } from "vue";
 import Publication from "../../types/publication";
 import { PlusIcon } from "@heroicons/vue/solid";
 import CardItem from "../Card/CardItem.vue";
@@ -42,8 +42,16 @@ export default defineComponent({
       gain: 0,
     });
 
+    const arrayTeste = reactive<Array<object>>([]);
+
+    function addNewDiv() {
+      arrayTeste.push({ teste: "ovo" });
+    }
+
     return {
       publication,
+      arrayTeste,
+      addNewDiv,
     };
   },
   components: {
@@ -87,6 +95,6 @@ export default defineComponent({
 }
 #containerGeneral {
   border: solid 2px red;
-  height: 80vh;
+  height: auto;
 }
 </style>
