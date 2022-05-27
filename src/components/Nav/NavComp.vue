@@ -1,38 +1,10 @@
-<template>
-  <div class="containerNav">
-    <PlusIcon style="cursor: pointer; width: 70px" />
-
-    <PlusIcon style="cursor: pointer; width: 70px" class="mt-2" />
-  </div>
-</template>
+<template></template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import { PlusIcon } from "@heroicons/vue/solid";
-
-export default defineComponent({
-  setup(props: any, { emit }) {
-    const addNewCard = () => {
-      emit("newCard", true);
-    };
-
-    const removeCard = () => {
-      emit("removeCard", true);
-    };
-
-    return {
-      addNewCard,
-      removeCard,
-    };
-  },
-  components: {
-    PlusIcon,
-  },
-});
 </script>
 
 <style>
-.containerNav {
+/* .containerNav {
   background-color: black;
   width: 6%;
   height: 100%;
@@ -46,5 +18,5 @@ export default defineComponent({
   justify-content: center;
   position: absolute;
   z-index: 1;
-}
+} */
 </style>
