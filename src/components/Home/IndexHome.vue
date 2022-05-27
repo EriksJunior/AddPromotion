@@ -9,6 +9,7 @@
         class="my-5 mt-3 text-ellipsis grid grid-cols-4 gap-5"
         ref="containerGeneral"
       >
+        <Teste />
         <!-- <div class="cardPromotion">
           <div class="imgItem">
             <img
@@ -37,6 +38,7 @@
 import { defineComponent, ref, h } from "vue";
 import Publication from "../../types/publication";
 import { PlusIcon } from "@heroicons/vue/solid";
+import Teste from "../teste/teste.vue";
 
 export default defineComponent({
   setup() {
@@ -76,6 +78,7 @@ export default defineComponent({
   },
   components: {
     PlusIcon,
+    Teste,
   },
 });
 </script>
@@ -111,5 +114,9 @@ export default defineComponent({
   background-color: rgb(0, 0, 0);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+}
+#containerGeneral {
+  border: solid 2px red;
+  height: 80vh;
 }
 </style>
