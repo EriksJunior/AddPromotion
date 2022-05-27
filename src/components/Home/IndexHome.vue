@@ -10,7 +10,7 @@
           class="my-5 mt-3 text-ellipsis grid grid-cols-4 gap-5"
           ref="containerGeneral"
         >
-          <div v-for="item in arrayTeste" :key="item">
+          <div v-for="item in publication" :key="item.uuid">
             <CardItem />
           </div>
         </div>
@@ -33,26 +33,23 @@ import CardItem from "../Card/CardItem.vue";
 
 export default defineComponent({
   setup() {
-    const publication = ref<Publication | Publication[]>({
-      uuid: "",
-      idEnterprise: "",
-      description: "",
-      img: "",
-      originalValue: 0,
-      promotionalValue: 0,
-      discountPercentage: "",
-      gain: 0,
-    });
-
-    const arrayTeste = reactive<Array<object>>([]);
+    const publication = ref<Publication[]>([]);
 
     function addNewDiv() {
-      arrayTeste.push({ teste: "teste" });
+      publication.value.push({
+        uuid: "",
+        idEnterprise: "",
+        description: "",
+        img: "",
+        originalValue: 0,
+        promotionalValue: 0,
+        discountPercentage: "",
+        gain: 0,
+      });
     }
 
     return {
       publication,
-      arrayTeste,
       addNewDiv,
     };
   },
