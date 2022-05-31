@@ -5,7 +5,20 @@
       style="padding: 0; margin: 0; font-size: 50px; width: 100%"
     >
       <div class="w-10/12">
-        <div class="mt-7 h-auto w-full text-ellipsis grid grid-cols-4 gap-5">
+        <div
+          class="
+            mt-7
+            h-auto
+            w-full
+            text-ellipsis
+            grid grid-cols-4
+            gap-5
+            sm:grid-cols-1
+            md:grid-cols-2
+            lg:grid-cols-3
+            xl:grid-cols-4
+          "
+        >
           <div
             v-for="item in publication"
             :key="item.uuid"
