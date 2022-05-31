@@ -1,16 +1,16 @@
 <template>
-  <div class="">
+  <div>
     <div
-      class="h-auto flex justify-center"
+      class="h-screen flex justify-center"
       style="padding: 0; margin: 0; font-size: 50px; width: 100%"
     >
       <div class="w-10/12">
-        <div
-          id="containerGeneral"
-          class="my-5 mt-3 text-ellipsis grid grid-cols-4 gap-5"
-          ref="containerGeneral"
-        >
-          <div v-for="item in publication" :key="item.uuid">
+        <div class="mt-7 h-auto w-full text-ellipsis grid grid-cols-4 gap-5">
+          <div
+            v-for="item in publication"
+            :key="item.uuid"
+            style="height: 70vh; width: 100%"
+          >
             <CardItem />
           </div>
         </div>
@@ -18,7 +18,7 @@
     </div>
 
     <div class="buttonAdd">
-      <button class="bg-slate-100 w-32 rounded-md" @click="addNewDiv">
+      <button class="bg-black text-gray-100 w-32 rounded-md" @click="addNewDiv">
         ADD
       </button>
     </div>
@@ -61,41 +61,6 @@ export default defineComponent({
 </script>
 
 <style>
-.cardPromotion {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: 55vh;
-}
-
-.imgItem {
-  height: 80%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  background-color: rgba(131, 121, 189, 0.118);
-}
-
-.descriptionItem {
-  width: 100%;
-  font-size: 15px;
-  font-weight: bold;
-  font-family: sans-serif;
-  text-align: center;
-  color: #dcdbdb;
-  background-color: rgb(0, 0, 0);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-#containerGeneral {
-  /* border: solid 2px red; */
-  height: auto;
-}
 .buttonAdd {
   z-index: 1;
   position: fixed;
