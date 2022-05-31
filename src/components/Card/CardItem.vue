@@ -1,6 +1,6 @@
 <template>
   <div class="cardPromotion">
-    <div style="height: 100%" class="containerGeneralCard">
+    <div class="containerGeneralCard">
       <div class="w-full h-14 flex justify-end">
         <XIcon
           class="bg-red-600 text-white w-8 h-8 cursor-pointer"
@@ -9,7 +9,7 @@
       </div>
 
       <div class="descriptionItem">
-        <div>
+        <div class="dataCard">
           <p>jaqueta nike pica das galaxia</p>
           <p>Masculina</p>
           <p>Futebol</p>
@@ -55,21 +55,30 @@ export default defineComponent({
   background-size: cover;
 }
 
+.containerGeneralCard:hover {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border-radius: 20px 20px 20px 20px;
+}
+
 .descriptionItem {
   width: 100%;
   font-size: 15px;
   font-weight: bold;
   font-family: sans-serif;
-  color: black;
+  color: white;
   display: flex;
   flex-direction: column;
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(5px);
+}
+
+.dataCard {
+  margin-left: 10px;
 }
 
 .containerGeneralCard {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
 }
 </style>
