@@ -3,8 +3,8 @@
     <div style="height: 100%" class="containerGeneralCard">
       <div class="w-full h-14 flex justify-end">
         <XIcon
-          class="bg-red-600 text-white w-10 h-10 cursor-pointer"
-          style="border-radius: 20%"
+          class="bg-red-600 text-white w-8 h-8 cursor-pointer"
+          style="border-radius: 20%; position: relative; top: -10px; left: 10px"
         />
       </div>
 
