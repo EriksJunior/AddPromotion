@@ -1,7 +1,7 @@
 <template>
   <div class="cardPromotion">
     <div class="containerGeneralCard">
-      <div class="w-full h-14 flex justify-between">
+      <div class="w-full h-14 flex justify-end">
         <div>
           <CheckIcon
             class="bg-green-600 text-white w-8 h-8 cursor-pointer"
