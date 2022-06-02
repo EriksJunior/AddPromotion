@@ -11,6 +11,7 @@
               top: -10px;
               left: -10px;
             "
+            @click="saveDataCard"
           />
         </div>
 
@@ -29,7 +30,12 @@
 
       <div class="descriptionItem">
         <div class="w-full h-9 flex justify-center">
-          <input type="text" class="w-11/12 h-9" placeholder="Descrição" />
+          <input
+            type="text"
+            class="w-11/12 h-9"
+            v-model="publication.description"
+            placeholder="Descrição"
+          />
         </div>
         <div class="flex justify-evenly h-9 w-full">
           <input class="w-1/5" type="text" placeholder="Sexo" />
@@ -59,9 +65,16 @@ export default defineComponent({
       gain: 0,
     });
 
-    function removeCard() {
-      emit("removeCard");
+    function removeCard() {}
+
+    function saveDataCard() {
+      emit("dadaCard", publication.value);
     }
+
+    return {
+      publication,
+      saveDataCard,
+    };
   },
   components: {
     XIcon,

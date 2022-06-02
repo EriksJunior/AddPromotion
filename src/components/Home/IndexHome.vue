@@ -19,12 +19,10 @@
             xl:grid-cols-4
           "
         >
-          <div
-            v-for="item in publication"
-            :key="item.uuid"
-            style="height: 70vh; width: 100%"
-          >
-            <CardItem />
+          <!-- v-for="(item, index) in publication"
+            :key="index" -->
+          <div style="height: 70vh; width: 100%">
+            <CardItem @dadaCard="teste = $event" />
           </div>
         </div>
       </div>
@@ -47,23 +45,17 @@ import CardItem from "../Card/CardItem.vue";
 export default defineComponent({
   setup() {
     const publication = ref<Publication[]>([]);
+    const teste: any = ref([]);
 
     function addNewDiv() {
-      publication.value.push({
-        uuid: "",
-        idEnterprise: "",
-        description: "",
-        img: "",
-        originalValue: 0,
-        promotionalValue: 0,
-        discountPercentage: "",
-        gain: 0,
-      });
+      publication.value.push(teste);
+      console.log(teste.value, "log1", publication.value);
     }
 
     return {
       publication,
       addNewDiv,
+      teste,
     };
   },
   components: {
