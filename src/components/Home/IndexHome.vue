@@ -45,7 +45,7 @@ import CardItem from "../Card/CardItem.vue";
 export default defineComponent({
   setup() {
     const publication = ref<Publication[]>([]);
-    const teste: any = ref([]);
+    const teste: any = ref({});
 
     function addNewDiv() {
       publication.value.push(teste);
