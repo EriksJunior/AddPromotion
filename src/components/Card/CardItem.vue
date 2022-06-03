@@ -36,11 +36,28 @@
             v-model="publication.description"
             placeholder="Descrição"
           />
+          <input v-model="publication.uuid" hidden />
+          <input v-model="publication.idEnterprise" hidden />
+        </div>
+        <div class="w-full h-9 flex justify-evenly">
+          <input
+            type="text"
+            class="w-4/12 h-9"
+            v-model="publication.originalValue"
+            placeholder="Valor Original"
+          />
+
+          <input
+            type="text"
+            class="w-5/12 h-9"
+            v-model="publication.promotionalValue"
+            placeholder="Valor Promocional"
+          />
         </div>
         <div class="flex justify-evenly h-9 w-full">
           <input class="w-1/5" type="text" placeholder="Sexo" />
           <input class="w-2/5" type="text" placeholder="Tipo" />
-          <input type="text" class="h-9 w-4/12" placeholder="Valor" />
+          <input type="text" class="h-9 w-4/12" placeholder="% Desc" />
         </div>
       </div>
     </div>
@@ -59,10 +76,9 @@ export default defineComponent({
       idEnterprise: "",
       description: "",
       img: "",
-      originalValue: 0,
-      promotionalValue: 0,
+      originalValue: null,
+      promotionalValue: null,
       discountPercentage: "",
-      gain: 0,
     });
 
     function removeCard() {}

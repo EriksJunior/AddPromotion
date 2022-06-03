@@ -3,8 +3,7 @@ export default interface Publication {
   idEnterprise: String,
   description: String,
   img: String,
-  originalValue: Number,
-  promotionalValue: Number,
+  originalValue: Number | null,
+  promotionalValue: Number | null,
   discountPercentage: String,
-  gain: Number
 }

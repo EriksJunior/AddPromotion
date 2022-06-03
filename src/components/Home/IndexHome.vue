@@ -11,17 +11,17 @@
             h-auto
             w-full
             text-ellipsis
-            grid grid-cols-4
+            grid grid-cols-2
             gap-5
             sm:grid-cols-1
             md:grid-cols-2
-            lg:grid-cols-3
-            xl:grid-cols-4
+            lg:grid-cols-2
+            xl:grid-cols-2
           "
         >
           <!-- v-for="(item, index) in publication"
             :key="index" -->
-          <div style="height: 70vh; width: 100%">
+          <div style="height: 70vh; width: 60%">
             <CardItem @dadaCard="teste = $event" />
           </div>
         </div>
