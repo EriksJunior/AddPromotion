@@ -1,10 +1,10 @@
 <template>
   <div class="cardPromotion">
     <div class="containerGeneralCard">
-      <div class="w-full h-14 flex justify-end">
+      <div class="w-full h-14 flex justify-between">
         <div>
-          <CheckIcon
-            class="bg-green-600 text-white w-8 h-8 cursor-pointer"
+          <CameraIcon
+            class="bg-white text-black w-10 h-10 cursor-pointer"
             style="
               border-radius: 20%;
               position: relative;
@@ -15,16 +15,31 @@
           />
         </div>
 
-        <div>
-          <XIcon
-            class="bg-red-600 text-white w-8 h-8 cursor-pointer"
-            style="
-              border-radius: 20%;
-              position: relative;
-              top: -10px;
-              left: 10px;
-            "
-          />
+        <div class="w-6/12 flex justify-end">
+          <div>
+            <CheckIcon
+              class="bg-green-600 text-white w-8 h-8 cursor-pointer"
+              style="
+                border-radius: 20%;
+                position: relative;
+                top: -10px;
+                left: -10px;
+              "
+              @click="saveDataCard"
+            />
+          </div>
+
+          <div>
+            <XIcon
+              class="bg-red-600 text-white w-8 h-8 cursor-pointer"
+              style="
+                border-radius: 20%;
+                position: relative;
+                top: -10px;
+                left: 10px;
+              "
+            />
+          </div>
         </div>
       </div>
 
@@ -67,7 +82,7 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import Publication from "../../types/publication";
-import { XIcon, CheckIcon } from "@heroicons/vue/solid";
+import { XIcon, CheckIcon, CameraIcon } from "@heroicons/vue/solid";
 
 export default defineComponent({
   setup(props, { emit }) {
@@ -95,6 +110,7 @@ export default defineComponent({
   components: {
     XIcon,
     CheckIcon,
+    CameraIcon,
   },
 });
 </script>
@@ -145,7 +161,7 @@ input {
   border: none;
   text-align: center;
   font-weight: bold;
-  background-color: #060b11c6;
+  background-color: black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
 }
