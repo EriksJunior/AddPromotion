@@ -48,7 +48,7 @@ export default defineComponent({
     const teste: any = ref({});
 
     function addNewDiv() {
-      publication.value.push(teste);
+      publication.value.push({ ...teste.value });
       console.log(teste.value, "log1", publication.value);
     }
 
