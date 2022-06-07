@@ -4,7 +4,7 @@
       <div class="w-full h-14 flex justify-between">
         <div>
           <CameraIcon
-            class="bg-white text-black w-10 h-10 cursor-pointer"
+            class="bg-white text-black w-8 h-8 cursor-pointer"
             style="
               border-radius: 20%;
               position: relative;
@@ -59,14 +59,14 @@
             type="text"
             class="w-4/12 h-9"
             v-model="publication.originalValue"
-            placeholder="Valor Original"
+            placeholder="Vl. Original"
           />
 
           <input
             type="text"
             class="w-5/12 h-9"
             v-model="publication.promotionalValue"
-            placeholder="Valor Promocional"
+            placeholder="Vl. Promocional"
           />
         </div>
         <div class="flex justify-evenly h-9 w-full">
@@ -118,12 +118,10 @@ export default defineComponent({
 <style scoped>
 .cardPromotion {
   width: 100%;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 20px;
   height: 100%;
-  background-image: url("https://www.guller.com.br/3272-medium_default/camisa-masculina-casual-moda-ver%C3%A3o-confortav%C3%A9l-estampada-top-homens.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  display: flex;
+  justify-content: center;
 }
 
 .containerGeneralCard:hover {
@@ -137,8 +135,7 @@ export default defineComponent({
   display: flex;
   justify-content: space-evenly;
   height: 30%;
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 13px;
   font-family: sans-serif;
   color: white;
   display: flex;
@@ -154,6 +151,12 @@ export default defineComponent({
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  width: 74%;
+  border-radius: 20px;
+  background-image: url("https://www.guller.com.br/3272-medium_default/camisa-masculina-casual-moda-ver%C3%A3o-confortav%C3%A9l-estampada-top-homens.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 input {
@@ -164,9 +167,50 @@ input {
   background-color: black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
+  color: white;
 }
 
 input:focus {
-  background-color: #060b11;
+  background-color: rgb(21, 21, 21);
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.312);
+}
+
+@media screen and (max-width: 1236px) and (min-width: 994px) {
+  .containerGeneralCard {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 994px) and (min-width: 901px) {
+  .containerGeneralCard {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 805px) and (min-width: 650px) {
+  .containerGeneralCard {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 649px) and (min-width: 536px) {
+  .containerGeneralCard {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 536px) and (min-width: 390px) {
+  .containerGeneralCard {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 390px) and (min-width: 320px) {
+  .containerGeneralCard {
+    width: 90%;
+  }
 }
 </style>

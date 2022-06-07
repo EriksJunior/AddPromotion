@@ -1,27 +1,29 @@
 <template>
   <div>
-    <div
-      class="h-screen flex justify-center"
-      style="padding: 0; margin: 0; font-size: 50px; width: 100%"
-    >
-      <div class="w-10/12">
+    <div class="h-screen w-full" style="padding: 0; margin: 0; font-size: 50px">
+      <div class="w-full">
         <div
           class="
             mt-7
             h-auto
             w-full
             text-ellipsis
-            grid grid-cols-2
+            grid grid-cols-3
             gap-5
             sm:grid-cols-1
             md:grid-cols-2
             lg:grid-cols-2
-            xl:grid-cols-2
+            xl:grid-cols-3
+            indexContainer
           "
         >
           <!-- v-for="(item, index) in publication"
             :key="index" -->
-          <div style="height: 70vh; width: 60%">
+          <div
+            v-for="(item, index) in publication"
+            :key="index"
+            style="height: 70vh; width: 100%"
+          >
             <CardItem @dadaCard="teste = $event" />
           </div>
         </div>
@@ -71,5 +73,12 @@ export default defineComponent({
   position: fixed;
   left: 80%;
   top: 90%;
+}
+
+@media screen and (max-width: 649px) and (min-width: 536px) {
+  .indexContainer {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>
