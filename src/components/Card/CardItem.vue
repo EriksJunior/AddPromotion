@@ -99,7 +99,7 @@ export default defineComponent({
     function removeCard() {}
 
     function saveDataCard() {
-      emit("dadaCard", publication.value);
+      emit("dataCard", { ...publication.value });
     }
 
     return {

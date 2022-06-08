@@ -24,7 +24,7 @@
             :key="index"
             style="height: 70vh; width: 100%"
           >
-            <CardItem @dadaCard="teste = $event" />
+            <CardItem @dataCard="cardDataReceived = $event" />
           </div>
         </div>
       </div>
@@ -39,25 +39,44 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, reactive } from "vue";
+import { defineComponent, ref, watch } from "vue";
 import Publication from "../../types/publication";
 import { PlusIcon } from "@heroicons/vue/solid";
 import CardItem from "../Card/CardItem.vue";
 
 export default defineComponent({
   setup() {
-    const publication = ref<Publication[]>([]);
-    const teste: any = ref({});
+    const publication = ref<Publication[]>([
+      {
+        uuid: "",
+        idEnterprise: "",
+        description: "",
+        img: "",
+        originalValue: null,
+        promotionalValue: null,
+        discountPercentage: "",
+      },
+    ]);
+    const cardDataReceived: any = ref({});
 
     function addNewDiv() {
-      publication.value.push({ ...teste.value });
-      console.log(teste.value, "log1", publication.value);
+      publication.value.push({ ...cardDataReceived.value });
+      console.log(publication.value);
     }
+
+    function teste(index: number) {
+      console.log(index);
+    }
+
+    watch(cardDataReceived, (newValue, oldValue) => {
+      console.log(newValue);
+      console.log(oldValue);
+    });
 
     return {
       publication,
       addNewDiv,
-      teste,
+      cardDataReceived,
     };
   },
   components: {
