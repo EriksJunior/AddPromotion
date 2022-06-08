@@ -27,6 +27,7 @@
             <CardItem @dataCard="cardDataReceived = $event" />
           </div>
         </div>
+        <button class="bg-white" @click="teste">TEfdsf</button>
       </div>
     </div>
 
@@ -61,22 +62,22 @@ export default defineComponent({
 
     function addNewDiv() {
       publication.value.push({ ...cardDataReceived.value });
+    }
+
+    function teste() {
+      for (var i = 0; i < publication.value.length; i++) {
+        publication.value[i] = cardDataReceived.value;
+      }
       console.log(publication.value);
     }
 
-    function teste(index: number) {
-      console.log(index);
-    }
-
-    watch(cardDataReceived, (newValue, oldValue) => {
-      console.log(newValue);
-      console.log(oldValue);
-    });
+    watch(cardDataReceived, () => {});
 
     return {
       publication,
       addNewDiv,
       cardDataReceived,
+      teste,
     };
   },
   components: {
