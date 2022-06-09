@@ -40,13 +40,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch } from "vue";
+import { defineComponent, ref, watch, computed } from "vue";
 import Publication from "../../types/publication";
 import { PlusIcon } from "@heroicons/vue/solid";
 import CardItem from "../Card/CardItem.vue";
+import { mapState } from "vuex";
 
 export default defineComponent({
   setup() {
+    const computadaTeste = computed(() => {
+      ...mapState(["products"])
+    });
+
     const publication = ref<Publication[]>([
       {
         uuid: "",
