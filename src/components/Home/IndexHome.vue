@@ -45,12 +45,14 @@ import Publication from "../../types/publication";
 import { PlusIcon } from "@heroicons/vue/solid";
 import CardItem from "../Card/CardItem.vue";
 import { mapState } from "vuex";
+import store from "./store";
 
 export default defineComponent({
   setup() {
-    const computadaTeste = computed(() => {
-      ...mapState(["products"])
-    });
+    // const computadaTeste = computed(() => {
+    //   ...mapState(["products"])
+    // });
+    console.log(store.state.products);
 
     const publication = ref<Publication[]>([
       {
